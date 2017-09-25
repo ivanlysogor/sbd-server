@@ -67,12 +67,13 @@ class Message(object):
 class MobileOriginatedMessage(Message):
 
     @classmethod
-    def parse(cls, stream):
+    def parse(cls, stream):    
         message = super(MobileOriginatedMessage, cls).parse(stream)
         header = message.get_information_element(0)
         message.time_of_session = header.time_of_session
         message.imei = header.imei
-        message.payload = message.get_information_element(1).payload
+        message.location = message.get_information_element(1).location
+        message.payload = message.get_information_element(2).payload
         return message
 
     def __init__(self):
@@ -175,8 +176,14 @@ class MobileOriginatedPayload(InformationElement):
 
 
 class MobileOriginatedLocationInformation(InformationElement):
+  
     def __init__(self, id_, length, data):
-        raise NotImplemented
+        super(MobileOriginatedLocationInformation, self).__init__(id_, length, data)
+        self._location  = data
+
+    @property
+    def location(self):
+        return self._location
 
 
 class MobileTerminatedHeader(InformationElement):
