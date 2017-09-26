@@ -12,7 +12,9 @@ class IOTPayload(object):
         out = StringIO.StringIO()
         with gzip.GunzipFile(fileobj=out, mode="w") as f:
           f.write(data)
-        cls._value = out.getvalue()
+        payload = cls()
+        payload._value = out.getvalue()
+        return payload
     
     def __init__(self):
         self._value = None
