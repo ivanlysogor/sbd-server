@@ -33,6 +33,6 @@ class IridiumTcpHandler(SocketServer.StreamRequestHandler):
         with open(sbd_file, "wb") as f:
             f.write(string.getvalue())
             
-        IOTPayload=IOTPayload.decompress(message.payload)
+        decompressed_message = IOTPayload.decompress(message.payload)
 
         self.server.logger.info("Message recieved at {0} stored OK".format(time_of_session))
