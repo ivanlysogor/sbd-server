@@ -3,7 +3,7 @@ import StringIO
 import gzip
 
 class IOTPayload(object):
-    """Decompressing payload and preparing JSON"""
+    """Decompressing payload"""
 
     @classmethod
     def decompress(cls, data):
