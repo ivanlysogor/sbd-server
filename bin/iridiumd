@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description="Iridium SBD message server")
 parser.add_argument("--host", help="client IP address",
         default="0.0.0.0")
 parser.add_argument("--port", help="the port to listen upon",
-        default=10800)
+        default=8090)
 parser.add_argument("action", help="start|stop|restart")
 parser.add_argument("directory", help="the working directory for the process")
 
