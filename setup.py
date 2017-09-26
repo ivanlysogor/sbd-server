@@ -8,7 +8,7 @@ setup(name="sbdIOT",
       author="Ivan Lysogor",
       author_email="ilysogor@gmail.com",
       url="https://github.com/ivanlysogor/sbdIOT",
-      packages=["sbdIOT"],
+      packages=["sbd"],
       scripts=["bin/iridiumd"],
       install_requires=[
           "python-daemon",
