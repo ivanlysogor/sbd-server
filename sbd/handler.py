@@ -3,9 +3,9 @@ import os
 import SocketServer
 import StringIO
 
-from sbd import MobileOriginatedMessage
-from sbd.util import mkdir_p
-
+from sbdIOT import MobileOriginatedMessage
+from sbdIOT.util import mkdir_p
+from sbdIOT import IOTPayload
 
 class IridiumTcpHandler(SocketServer.StreamRequestHandler):
 
@@ -32,5 +32,7 @@ class IridiumTcpHandler(SocketServer.StreamRequestHandler):
             f.write(message.payload)
         with open(sbd_file, "wb") as f:
             f.write(string.getvalue())
+            
+        IOTPayload=IOTPayload.decompress(message.payload)
 
         self.server.logger.info("Message recieved at {0} stored OK".format(time_of_session))

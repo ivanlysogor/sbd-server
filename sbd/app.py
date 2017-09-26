@@ -1,6 +1,6 @@
 import os
 
-from sbd.server import IridiumServer
+from sbdIOT.server import IridiumServer
 
 
 class IridiumApp(object):
