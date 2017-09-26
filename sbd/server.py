@@ -2,7 +2,7 @@ import logging
 import os
 import SocketServer
 
-from sbd.handler import IridiumTcpHandler
+from sbdIOT.handler import IridiumTcpHandler
 
 class IridiumServer(SocketServer.TCPServer):
 

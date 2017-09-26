@@ -2,13 +2,13 @@
 
 from distutils.core import setup
 
-setup(name="sbd",
+setup(name="sbdIOT",
       version="0.1",
-      description="Iridium Short Burst Data DirectIP handling",
-      author="Pete Gadomski",
-      author_email="pete.gadomski@gmail.com",
-      url="https://github.com/gadomski/sbd",
-      packages=["sbd"],
+      description="Iridium Short Burst Data DirectIP handling with compressing and parsing MQTT Messages. Based on Gadomsky code",
+      author="Ivan Lysogor",
+      author_email="ilysogor@gmail.com",
+      url="https://github.com/ivanlysogor/sbdIOT",
+      packages=["sbdIOT"],
       scripts=["bin/iridiumd"],
       install_requires=[
           "python-daemon",

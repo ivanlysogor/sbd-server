@@ -6,8 +6,8 @@ import sys
 
 from daemon.runner import DaemonRunner
 
-from sbd.app import IridiumApp
-from sbd.util import mkdir_p
+from sbdIOT.app import IridiumApp
+from sbdIOT.util import mkdir_p
 
 parser = argparse.ArgumentParser(description="Iridium SBD message server")
 parser.add_argument("--host", help="client IP address",
